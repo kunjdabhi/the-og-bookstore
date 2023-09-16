@@ -30,13 +30,13 @@ const Wishlist = ()=>{
     } else {
         return (
    
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 translate-y-16">
+            <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 translate-y-16">
             {wishlists && wishlists.map((item)=>{
                 return (
-                    <div className=" flex flex-col rounded-md hover:shadow-lg transition-shadow py-5 px-3 text-[#384749] min-h-full relative" key={item._id}>
+                    <div className="group flex flex-col rounded-md hover:shadow-lg transition-shadow py-5 px-3 text-[#384749] min-h-full relative" key={item._id}>
                         <Link to={`/books/${item._id}`} className="">
                             <div className="m-2">
-                            <img src={item.thumbnail} alt="Thumnail of book" className="h-60 w-44 rounded-lg shadow-xl mx-auto" />
+                            <img src={item.thumbnail} alt="Thumnail of book" className="group-hover:scale-[1.1] transition-all h-60 w-44 rounded-lg shadow-xl mx-auto" />
                             </div>  
                         <div className="text-center p-2 mb-7">
                             <p className="font-semibold text-lg">{item.title}</p>

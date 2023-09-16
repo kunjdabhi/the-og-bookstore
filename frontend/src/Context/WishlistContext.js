@@ -27,6 +27,7 @@ export const WishListContextProvider = ({children})=>{
     const {user} = useContext(AuthContext);
     useEffect(()=>{
         try{    
+            
             const fetchWishlist = async ()=>{
                 const books = await fetch('/api/wishlist',{
                     headers:{
@@ -37,7 +38,9 @@ export const WishListContextProvider = ({children})=>{
                 const temp = wishlistedBook.wishlist;
                 setWishlist(temp);
             }
-            fetchWishlist();
+            if(user){
+                fetchWishlist();
+            }
         } catch(e){
             console.log('error in getting the user\'s wishlist');
         }

@@ -32,7 +32,10 @@ const userSchema = new Schema({
         default:"USER"
     },
     wishlist:[{type: mongoose.Schema.Types.ObjectId, ref:"Book"}],
-    cart:[{type: mongoose.Schema.Types.ObjectId, ref:"Book"}]
+    cart:[{
+        book:{type: mongoose.Schema.Types.ObjectId, ref:"Book"},
+        qty: {type: Number}
+    }]
 })
 
 userSchema.statics.signup = async function(body){
@@ -62,9 +65,7 @@ userSchema.statics.signup = async function(body){
         lastname:body.lastname,
         firstname:body.firstname,
         mobile : body.mobile,
-        wishlist:body.wishlist
     })
-
     return user;    
 }
 

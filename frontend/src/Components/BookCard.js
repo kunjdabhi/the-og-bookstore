@@ -38,10 +38,10 @@ const BookCard = ({book}) => {
     
     return (    
         
-        <div className=" flex flex-col rounded-md hover:shadow-lg transition-shadow py-5 px-3 text-[#384749] min-h-full relative">
+        <div className="group flex flex-col rounded-md hover:shadow-lg transition-shadow py-5 px-3 text-[#384749] min-h-full relative">
             <Link to={`/books/${book._id}`} className="">
                 <div className="m-2">
-                <img src={book.thumbnail} alt="Thumnail of book" className="h-60 w-44 rounded-lg shadow-xl mx-auto" />
+                <img src={book.thumbnail} alt="Thumnail of book" className="h-60 w-44 rounded-lg shadow-xl mx-auto group-hover:scale-[1.1] transition-all" />
                 </div>
                 <div className="text-center p-2 mb-7">
                     <p className="font-semibold text-lg">{book.title}</p>
