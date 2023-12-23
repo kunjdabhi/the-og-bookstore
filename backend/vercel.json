@@ -3,10 +3,10 @@
     "name": "the-og-bookstore",
     "builds":[
         {
-            "src": "server.js", "use":"@vercel/node"
+            "src": "*.js", "use":"@vercel/node"
         }
     ],
     "routes":[
-        {"src":"/(.*)", "dest": "/server.js"}
+        {"src":"/(.*)", "dest": "/"}
     ]
 }
