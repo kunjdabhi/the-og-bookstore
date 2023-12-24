@@ -10,10 +10,10 @@ const cartRouter = require('./routes/cartRoutes');
 
 app.use(express.json());
 app.use(cors({
-    origin:["https://the-og-bookstore-nqqs.vercel.app/"],
-    method:["POST", "GET", "PATCH", "DELETE"],
-    credential : true
-}))
+    origin: 'https://the-og-bookstore-nqqs.vercel.app', 
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  }));
 
 mongoose.connect(process.env.DB_URI,()=>{
     console.log('connected to db');
