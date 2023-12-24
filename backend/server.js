@@ -1,7 +1,7 @@
-
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const app = express();
 const libRouter = require('./routes/libRoutes');
 const userRouter = require('./routes/userRoutes');
@@ -9,6 +9,11 @@ const userRouter = require('./routes/userRoutes');
 const cartRouter = require('./routes/cartRoutes');
 
 app.use(express.json());
+app.use(cors({
+    origin:["https://the-og-bookstore-nqqs.vercel.app/"],
+    method:["POST", "GET", "PATCH", "DELETE"],
+    credential : true
+}))
 
 mongoose.connect(process.env.DB_URI,()=>{
     console.log('connected to db');
