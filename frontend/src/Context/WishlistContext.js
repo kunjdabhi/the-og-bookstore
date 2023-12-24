@@ -29,7 +29,7 @@ export const WishListContextProvider = ({children})=>{
         try{    
             
             const fetchWishlist = async ()=>{
-                const books = await fetch('/api/wishlist',{
+                const books = await fetch('https://the-og-bookstore.vercel.app/api/wishlist',{
                     headers:{
                         'Authorization':`Bearer ${user.token}`,
                     }
