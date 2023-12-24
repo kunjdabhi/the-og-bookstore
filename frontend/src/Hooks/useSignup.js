@@ -8,7 +8,7 @@ export const useSignup = ()=>{
         const signup = async(user)=>{
             setLoading(true)
             try{
-                const response = await fetch('/api/user/signup',{
+                const response = await fetch('http://the-og-bookstore.vercel.app/api/user/signup',{
                     method:'POST',
                     headers:{'Content-type':'application/json'},
                     body:JSON.stringify({email:user.email, firstname:user.firstname, lastname:user.lastname, password:user.password, mobile:user.mobile})

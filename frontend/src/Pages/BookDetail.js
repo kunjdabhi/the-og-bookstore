@@ -7,7 +7,7 @@ const BookDetail = () => {
 
     useEffect(()=>{
         const fetchABook = async ()=>{
-            const response = await fetch(`/api/books/${id}`);
+            const response = await fetch(`http://the-og-bookstore.vercel.app/api/books/${id}`);
             const book = await response.json();
             if(response.ok){
                 setBook(book[0]);

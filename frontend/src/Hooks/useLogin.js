@@ -10,7 +10,7 @@ export const useLogin = ()=>{
     const login = async (email,password)=>{
         try{
             setIsLoading(true);
-            const response = await fetch('/api/user/login',{
+            const response = await fetch('http://the-og-bookstore.vercel.app/api/user/login',{
                 method:'POST',
                 headers:{'Content-type':'application/json'},
                 body:JSON.stringify({email,password})

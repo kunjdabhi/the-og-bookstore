@@ -12,7 +12,7 @@ const Wishlist = ()=>{
 
     const handleRemoveWishlist = async(book)=>{
         dispatch({type: 'REMOVE_WISHLIST', payload:book});
-        const wishlist = await fetch(`/api/wishlist/${book._id}`, {
+        const wishlist = await fetch(`http://the-og-bookstore.vercel.app/api/wishlist/${book._id}`, {
             method:'POST',
             headers:{
                 'Authorization': `Bearer ${user.token}`
